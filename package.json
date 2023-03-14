@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "lib:new": "./tools/scripts/lib.new",
+    "app:new": "./tools/scripts/app.new",
     "semantic-release": "semantic-release"
   },
   "scope": "mykola",

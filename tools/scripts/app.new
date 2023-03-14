@@ -1,0 +1,33 @@
+# Purpose: Create a new library in the monorepo
+# Usage: `./scripts/app.new.sh <APP_NAME>`
+
+APP_NAME=$1
+
+if [ -z "$APP_NAME" ]; then
+  echo "Usage: ./scripts/app.new.sh <APP_NAME>"
+  exit 1
+fi
+
+if [ -d "packages/$APP_NAME" ]; then
+  echo "Package $APP_NAME already exists"
+  exit 1
+fi
+
+# if not on `main` git branch, exit
+if [ "$(git branch --show-current)" != "main" ]; then
+  echo "You must be on the main branch to create a new app"
+  exit 1
+fi
+
+# if there are uncommitted changes, exit
+if [ -n "$(git status --porcelain)" ]; then
+  echo "You must commit or discard your changes before creating a new app"
+  exit 1
+fi
+
+# create a branch for the new app
+git checkout -b "app/$APP_NAME"
+
+# create the app
+nx g @nrwl/node:application --tags=scope:mykola,type:application $APP_NAME
+
