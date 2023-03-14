@@ -13,4 +13,21 @@ if [ -d "libs/$LIB_NAME" ]; then
   exit 1
 fi
 
+# if not on `main` git branch, exit
+if [ "$(git branch --show-current)" != "main" ]; then
+  echo "You must be on the main branch to create a new library"
+  exit 1
+fi
+
+# if there are uncommitted changes, exit
+if [ -n "$(git status --porcelain)" ]; then
+  echo "You must commit or discard your changes before creating a new library"
+  exit 1
+fi
+
+# create a branch for the new library
+git checkout -b "lib/$LIB_NAME"
+
+# create the library
 nx g @nrwl/js:lib --tags=scope:mykola,type:library --publishable --importPath=@mykola/$LIB_NAME $LIB_NAME
+
