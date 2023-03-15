@@ -5,6 +5,7 @@
   "scripts": {
     "lib:new": "./tools/scripts/lib.new",
     "app:new": "./tools/scripts/app.new",
+    "plugin:new": "./tools/scripts/nx.plugin.new",
     "semantic-release": "semantic-release"
   },
   "scope": "mykola",
