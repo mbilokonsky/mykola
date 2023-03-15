@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mykola/ged": ["packages/ged/src/index.ts"],
       "@mykola/mykola": ["packages/mykola/src/index.ts"]
     }
   },
