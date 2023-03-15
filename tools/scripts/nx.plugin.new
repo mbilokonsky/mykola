@@ -4,7 +4,7 @@
 PLUGIN_NAME=$1
 
 if [ -z "$PLUGIN_NAME" ]; then
-  echo "Usage: ./scripts/nx:plugin.new <LIB_NAME>"
+  echo "Usage: ./scripts/nx:plugin.new <PLUGIN_NAME>"
   exit 1
 fi
 
