@@ -1,6 +1,8 @@
 # Purpose: Create a new library in the monorepo
 # Usage: `./scripts/lib.new.sh <LIB_NAME>`
 
+set -e
+
 LIB_NAME=$1
 
 if [ -z "$LIB_NAME" ]; then

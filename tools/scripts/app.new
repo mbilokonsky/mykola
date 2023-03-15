@@ -1,6 +1,8 @@
 # Purpose: Create a new library in the monorepo
 # Usage: `./scripts/app.new.sh <APP_NAME>`
 
+set -e
+
 APP_NAME=$1
 
 if [ -z "$APP_NAME" ]; then
