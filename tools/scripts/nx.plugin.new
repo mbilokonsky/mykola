@@ -1,0 +1,33 @@
+# Purpose: Create a new library in the monorepo
+# Usage: `./scripts/nx.plugin.new <PLUGIN_NAME>`
+
+PLUGIN_NAME=$1
+
+if [ -z "$PLUGIN_NAME" ]; then
+  echo "Usage: ./scripts/nx:plugin.new <LIB_NAME>"
+  exit 1
+fi
+
+if [ -d "packages/$PLUGIN_NAME" ]; then
+  echo "Plugin $PLUGIN_NAME already exists"
+  exit 1
+fi
+
+# if not on `main` git branch, exit
+if [ "$(git branch --show-current)" != "main" ]; then
+  echo "You must be on the main branch to create a new nx plugin"
+  exit 1
+fi
+
+# if there are uncommitted changes, exit
+if [ -n "$(git status --porcelain)" ]; then
+  echo "You must commit or discard your changes before creating a new nx plugin"
+  exit 1
+fi
+
+# create a branch for the new library
+git checkout -b "nx:plugin/$PLUGIN_NAME"
+
+# create the library
+nx g plugin $PLUGIN_NAME --directory=plugins --importPath=@mykola/$PLUGIN_NAME --tags=scope:mykola,type:nx-plugin
+

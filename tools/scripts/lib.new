@@ -29,5 +29,5 @@ fi
 git checkout -b "lib/$LIB_NAME"
 
 # create the library
-nx g @nrwl/js:lib --tags=scope:mykola,type:library --publishable --importPath=@mykola/$LIB_NAME $LIB_NAME
+nx g @nrwl/js:lib --tags=scope:mykola,type:library --directory=libs --publishable --importPath=@mykola/$LIB_NAME $LIB_NAME
 

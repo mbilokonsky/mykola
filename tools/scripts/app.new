@@ -8,7 +8,7 @@ if [ -z "$APP_NAME" ]; then
   exit 1
 fi
 
-if [ -d "packages/$APP_NAME" ]; then
+if [ -d "apps/$APP_NAME" ]; then
   echo "Package $APP_NAME already exists"
   exit 1
 fi
@@ -29,5 +29,5 @@ fi
 git checkout -b "app/$APP_NAME"
 
 # create the app
-nx g @nrwl/node:application --tags=scope:mykola,type:application $APP_NAME
+nx g @nrwl/node:application --directory=apps --tags=scope:mykola,type:application $APP_NAME
 
