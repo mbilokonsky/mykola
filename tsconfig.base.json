@@ -1,5 +1,5 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mykola/bound-import": ["packages/bound-import/src/index.ts"],
       "@mykola/mykola": ["packages/mykola/src/index.ts"]
+    },
+    "compilerOptions": {
+      "plugins": [{ "transform": "transformer-module" }]
     }
   },
   "exclude": ["node_modules", "tmp"]

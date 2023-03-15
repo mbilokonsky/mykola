@@ -1,0 +1,30 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "node_modules": true,
+    "build": true,
+    "dist": true,
+    "coverage": true,
+    "target": true,
+    "*.log": true
+  },
+  "search.exclude": {
+    "node_modules": true,
+    "build": true,
+    "dist": true,
+    "coverage": true,
+    "target": true,
+    "*.log": true
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "typescript.tsdk": "node_modules/ttypescript/lib"
+}
