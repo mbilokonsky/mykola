@@ -2,7 +2,7 @@
 # Usage: `./scripts/coda.new.sh <PACK_NAME>`
 
 set -e
-
+typeset -l PACK_NAME
 PACK_NAME=$1
 
 if [ -z "$PACK_NAME" ]; then
