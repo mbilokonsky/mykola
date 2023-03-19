@@ -37,5 +37,6 @@ git checkout -b "coda/$PACK_NAME"
 
 # create the library
 nx g @nrwl/js:lib --tags=scope:mykola,type:library,platform:coda --directory=coda --publishable --importPath=@mykola/$PACK_NAME $PACK_NAME
-echo pwd
+pwd
 cd packages/coda/$PACK_NAME
+pwd
