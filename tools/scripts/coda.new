@@ -41,5 +41,5 @@ pwd
 echo "Coda requires that you use its CLI in the project directory."
 echo "You should do a 'cd packages/coda/$PACK_NAME' to deploy for now."
 echo "That command has been copied to your clipboard."
-echo "cd packages/coda/$PACK_NAME" | xclip
+echo "cd packages/coda/$PACK_NAME" | xclip -selection clipboard
 
