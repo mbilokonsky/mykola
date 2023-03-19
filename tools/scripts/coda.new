@@ -2,7 +2,7 @@
 # Usage: `./scripts/coda.new.sh <PACK_NAME>`
 
 set -e
-input=($1)
+input=$1
 
 echo "Your input was $input"
 echo "We want $input:l"
