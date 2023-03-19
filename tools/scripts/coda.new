@@ -6,7 +6,7 @@ input=$1
 
 echo "Your input was $input"
 echo "We want $input:l"
-PACK_NAME=${(L)input}
+PACK_NAME=`echo $input:l`
 
 if [ -z "$PACK_NAME" ]; then
   echo "Usage: ./scripts/coda.new.sh <PACK_NAME>"
