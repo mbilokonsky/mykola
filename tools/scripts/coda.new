@@ -2,8 +2,7 @@
 # Usage: `./scripts/coda.new.sh <PACK_NAME>`
 
 set -e
-AS_TYPED=$1
-PACK_NAME="${$($AS_TYPED):l}"
+PACK_NAME=${awk '{print tolower($0)}'}
 
 if [ -z "$PACK_NAME" ]; then
   echo "Usage: ./scripts/coda.new.sh <PACK_NAME>"
