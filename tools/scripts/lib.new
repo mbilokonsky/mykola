@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Purpose: Create a new library in the monorepo
 # Usage: `./scripts/lib.new.sh <LIB_NAME>`
 

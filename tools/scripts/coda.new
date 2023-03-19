@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Purpose: Create a new coda pack library in the monorepo
 # Usage: `./scripts/coda.new.sh <PACK_NAME>`
 
