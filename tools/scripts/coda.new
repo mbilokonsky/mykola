@@ -1,0 +1,36 @@
+# Purpose: Create a new coda pack library in the monorepo
+# Usage: `./scripts/coda.new.sh <PACK_NAME>`
+
+set -e
+
+PACK_NAME=$1
+
+if [ -z "$PACK_NAME" ]; then
+  echo "Usage: ./scripts/coda.new.sh <PACK_NAME>"
+  exit 1
+fi
+
+if [ -d "coda/$PACK_NAME" ]; then
+  echo "Coda pack $PACK_NAME already exists"
+  exit 1
+fi
+
+# if not on `main` git branch, exit
+if [ "$(git branch --show-current)" != "main" ]; then
+  echo "You must be on the main branch to create a new coda pack."
+  exit 1
+fi
+
+# if there are uncommitted changes, exit
+if [ -n "$(git status --porcelain)" ]; then
+  echo "You must commit or discard your changes before creating a new coda pack"
+  exit 1
+fi
+
+# create a branch for the new library
+git checkout -b "coda/$PACK_NAME"
+
+# create the library
+nx g @nrwl/js:lib --tags=scope:mykola,type:library,platform:coda --directory=coda --publishable --importPath=@mykola/$PACK_NAME $PACK_NAME
+cd coda/$PACK_NAME
+echo pwd
