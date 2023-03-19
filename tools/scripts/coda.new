@@ -2,7 +2,7 @@
 # Usage: `./scripts/coda.new.sh <PACK_NAME>`
 
 set -e
-PACK_NAME=${$1:l}
+PACK_NAME="${$1:l}"
 
 if [ -z "$PACK_NAME" ]; then
   echo "Usage: ./scripts/coda.new.sh <PACK_NAME>"
